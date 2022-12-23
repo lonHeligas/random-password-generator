@@ -6,9 +6,16 @@ var generateBtn = document.querySelector("#generate");
 // this makes the variable below accessile throughout the code
 var numberOfChars;
 var okayToUseNumbers;
-var okayToUseNumbers;
+var okayToUseSpecialChars;
 var okayToUseCapChars;
 var finalPassword = "";
+var lowerCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var upperCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var specialCharacters = ['!','@','#','$','%','^','&','*','(',')','_','+','-','='];
+var numberCharacters = ['0','1','2','3','4','5','6','7','8','9']
+
+
+
 
 // use global variables to list out all possible and store them in an array
 // special characters
@@ -18,28 +25,62 @@ var finalPassword = "";
 
 // this is your function. your work starts here 
 // hints are as follows
-function askQuestions(){
+function askPasswordLength(){
   //alert box/prompt
-  var numberOfChars = parseInt(prompt("How many characters do you want your password to be?"));
-  // limit the number of characters with an if statement. And convert it to a number. parse.Int
+  numberOfChars = parseInt(prompt("How many characters do you want your password to be?"));  
+  if (numberOfChars > 30){
+    numberOfChars = parseInt(prompt("That's crazy. Try 30 characters or less"));    
+  } // limit the number of characters with an if statement. And convert it to a number. parse.Int
   // click confirm stuff
-  var okayToUseSpecialChars = confirm("Do you want to use special characters?")
-  var okayToUseNumbers = confirm("Do you want to use numbers?")
-  var okayToUseCapChars = confirm("Do you want to use capital characters?")
+  
 }
+
+function specialCharConfirm (){
+  okayToUseSpecialChars = parseInt(prompt("Do you want to use special characters?"));  
+}
+function numberCharConfirm (){
+  okayToUseNumbers = parseInt(prompt("Do you want to use numbers?"));  
+  
+}
+function capitalCharConfirm (){
+  okayToUseCapChars = parseInt(prompt("Do you want to use capital letters?"));  
+  
+}
+
+
+
+function checkLength(){
+  if numberOfChars > 30
+}
+
+// okayToUseSpecialChars = confirm("Do you want to use special characters?")  
+// okayToUseNumbers = confirm("Do you want to use numbers?")
+// okayToUseCapChars = confirm("Do you want to use capital characters?")
+
+
+
+
+
+
+
+
 
 // use a loop to grab a random character X times
 
-
+askQuestions();8
+console.log(numberOfChars);
+console.log(okayToUseSpecialChars);
+console.log(okayToUseNumbers);
+console.log(okayToUseCapChars);
 
 // finalPassword += next character //
 
 
-function generatePassword(){
-  askQuestions();
-  // this is the part that controls the actual generation of the password
+function start(){  
+  askPasswordLength();
+}
 
-  
+function generatePassword(){
 
 }
 
@@ -65,3 +106,5 @@ generateBtn.addEventListener("click", writePassword);
 // var arr2 = ["bob", "harry"];
 // var mergedArr = [...arr1, ...arr2];
 
+
+// start ();
