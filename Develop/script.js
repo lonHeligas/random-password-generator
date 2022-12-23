@@ -91,11 +91,11 @@ function generatePassword(){
       console.log(y);
       console.log(finalPassword);
   }
-
   writePassword();
 }
 
-// if they don't get a password, it should be the URL to Spaceballs 12345.
+
+
 
 
 // before I start the loop, glue all the arrays together as one master list of charcters
