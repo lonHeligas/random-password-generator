@@ -83,13 +83,16 @@ function generatePassword(){
     passwordArray = passwordArray.concat(specialCharacters);
   }
   console.log(passwordArray); 
-
+  finalPassword = "";
   for (var x = 0; x<= numberOfChars; x++){
-      const y = Math.floor(Math.random() * passwordArray.length -1);
+      const y = Math.floor(Math.random() * (passwordArray.length -1));
       finalPassword = finalPassword + passwordArray[y];
       console.log(x);
       console.log(y);
       console.log(finalPassword);
+  }
+
+  writePassword();
 }
 
 // if they don't get a password, it should be the URL to Spaceballs 12345.
@@ -120,32 +123,37 @@ function generatePassword(){
 
 // use a loop to grab a random character X times
 
-askPasswordLength();
-console.log(numberOfChars);
-console.log(okayToUseSpecialChars);
-console.log(okayToUseNumbers);
-console.log(okayToUseLowerChars);
-console.log(okayToUseCapChars);
+
+// console.log(numberOfChars);
+// console.log(okayToUseSpecialChars);
+// console.log(okayToUseNumbers);
+// console.log(okayToUseLowerChars);
+// console.log(okayToUseCapChars);
 
 // finalPassword += next character //
 
 
 function start(){  
-  askPasswordLength();
+  clickTheButton();
 }
 
 
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function writePassword() {    
   var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+  passwordText.value = finalPassword;
+}
+
+
+function clickTheButton (){
+
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", askPasswordLength);
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+start();
 
 
 
