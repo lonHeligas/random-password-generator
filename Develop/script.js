@@ -1,9 +1,6 @@
-// Assignment Code  
-
-// this project is about breaking things down into small parts
-
 var generateBtn = document.querySelector("#generate");
-// this makes the variable below accessile throughout the code
+
+// global variables are below
 var numberOfChars;
 var okayToUseLowerChars;
 var okayToUseNumbers;
@@ -17,17 +14,6 @@ var numberCharacters = ['0','1','2','3','4','5','6','7','8','9'];
 var passwordArray = [];
 
 
-// use global variables to list out all possible and store them in an array
-// special characters
-// lower case letters
-// upper case letters
-// numbers
-
-// this is your function. your work starts here 
-// hints are as follows
-
-
-
 function askPasswordLength(){
     //alert box/prompt
   numberOfChars = parseInt(prompt("How many characters do you want your password to be?"));  
@@ -36,7 +22,7 @@ function askPasswordLength(){
 }
 
 function checkLength(){
-
+  // checks the length of the passowrd to ensure it's between 8 and 128 characters
   if (numberOfChars >=8 && numberOfChars <= 128){
     specialCharConfirm();    
   } else {
@@ -49,7 +35,6 @@ function specialCharConfirm (){
   okayToUseSpecialChars = confirm("Do you want to use special characters?");  
   console.log("special characters? " + okayToUseSpecialChars);
   numberCharConfirm()
-
 }
 
 function numberCharConfirm (){
@@ -66,7 +51,17 @@ function lowerCharConfirm (){
 function capitalCharConfirm (){
   okayToUseCapChars = confirm("Do you want to use upper-case letters?");    
   console.log("upper case? " + okayToUseCapChars)
-  areYouReady();
+    passwordCheck();
+}
+
+function passwordCheck (){
+  if (!okayToUseCapChars && !okayToUseNumbers && !okayToUseSpecialChars && !okayToUseLowerChars) {
+    confirm("You didn't select any character paramaters. Your password should be 1 2 3 4 5, but I'll just have you do the whole thing again.")
+    askPasswordLength();
+  } else {
+    areYouReady();
+  }
+
 }
 
 function areYouReady (){
@@ -75,6 +70,8 @@ function areYouReady (){
 }
 
 function generatePassword(){
+  // generates the password from the answers given by the user
+  // clears out the array in case the user has already generated a password
   passwordArray = [];   
   if (okayToUseLowerChars){
     console.log("okay for lower case:" + okayToUseLowerChars);
@@ -104,19 +101,7 @@ function generatePassword(){
   writePassword();
 }
 
-// before I start the loop, glue all the arrays together as one master list of charcters
-// based on which ones are approved
 
-// or
-// choose one of the availble random sets
-// choose a random character from the set
-
-// click confirm stuff
-// okayToUseSpecialChars = confirm("Do you want to use special characters?")  
-// okayToUseNumbers = confirm("Do you want to use numbers?")
-// okayToUseCapChars = confirm("Do you want to use capital characters?")
-
-// use a loop to grab a random character X times
 
 // console.log(numberOfChars);
 // console.log(okayToUseSpecialChars);
@@ -124,7 +109,7 @@ function generatePassword(){
 // console.log(okayToUseLowerChars);
 // console.log(okayToUseCapChars);
 
-// finalPassword += next character //
+
 
 function start(){  
   clickTheButton();
@@ -147,11 +132,3 @@ function clickTheButton (){
 
 start();
 
-/* merging arrays */
-
-// var arr1 = ["hello", "world"];
-// var arr2 = ["bob", "harry"];
-// var mergedArr = [...arr1, ...arr2];
-
-
-// start ();
