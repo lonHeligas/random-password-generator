@@ -45,7 +45,7 @@ The challenges in this project were mostly involving keeping track of where my c
 [This is the repository for this assignment](https://lonheligas.github.io/portfolio-responsive-challenge/)
 
 Screenshot of the final portfolio:
-![Screenshot of the final page is as follows:](./Develop/assets/images/random-password-generator-screenshot.png)
+![Screenshot of the final page is as follows:](./Assets/images/random-password-generator-screenshot.png)
 
 
 You are required to submit the following for review:
