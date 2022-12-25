@@ -16,11 +16,6 @@ var specialCharacters = [ '#', '$', '%', '&', '\'','(',')','*','+',',','-','.','
 var numberCharacters = ['0','1','2','3','4','5','6','7','8','9'];
 var passwordArray = [];
 
-// i see you in my code, deleting my codez
-
-// HAX0RZ
-// LEET
-
 
 // use global variables to list out all possible and store them in an array
 // special characters
@@ -80,11 +75,7 @@ function areYouReady (){
 }
 
 function generatePassword(){
-  passwordArray = []; // shouldn't this be an empty array and not a new string? [Oh derp]
-  // that changes concat from a array.concat() to a string.concat() which probably behaves all goofy.   [gotcha]
-  // [ahhhh. oka
-  // passwordArray = []   try that instead.
-  
+  passwordArray = [];   
   if (okayToUseLowerChars){
     console.log("okay for lower case:" + okayToUseLowerChars);
     passwordArray = passwordArray.concat(lowerCharacters);
